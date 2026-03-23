@@ -5,6 +5,7 @@
   },
   "css.validate": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always"
   }
 }
