@@ -1,7 +1,7 @@
+import { redirect } from 'next/navigation'
+
+import { Path } from '@/enums/Path'
+
 export default function HomePage() {
-  return (
-    <main>
-      <h1 className="text-3xl font-bold">Hello world!</h1>
-    </main>
-  )
+  redirect(Path.Counter)
 }
