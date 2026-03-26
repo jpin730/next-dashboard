@@ -1,17 +1,17 @@
 import type { Metadata } from 'next'
 
-import { CartCounter } from '@/app/shopping-cart/CartCounter'
+import { Counter } from '@/features/counter/components/Counter'
 
 export const metadata: Metadata = {
-  title: 'Shopping Cart Counter',
+  title: 'Counter',
   description: 'A simple counter',
 }
 
 export default function CounterPage() {
   return (
-    <div className="flex size-full flex-col items-center justify-center">
-      <p>Products in cart</p>
-      <CartCounter initialCount={20} />
-    </div>
+    <main className="flex size-full flex-col items-center justify-center">
+      <h1 className="text-2xl font-bold">Counter</h1>
+      <Counter initialCount={20} />
+    </main>
   )
 }

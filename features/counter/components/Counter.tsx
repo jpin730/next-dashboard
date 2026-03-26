@@ -6,7 +6,7 @@ interface Props {
   initialCount?: number
 }
 
-export const CartCounter = ({ initialCount = 10 }: Readonly<Props>) => {
+export const Counter = ({ initialCount = 10 }: Readonly<Props>) => {
   const [count, setCount] = useState(initialCount)
 
   return (

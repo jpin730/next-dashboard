@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { IoHeartOutline } from 'react-icons/io5'
 
-import { Path } from '@/enums/Path'
+import { Path } from '@/features/shared/enums/Path'
 
 interface Props {
   pokemon: SimplePokemon

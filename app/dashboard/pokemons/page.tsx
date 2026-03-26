@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
+
 import { PokemonGrid } from '@/features/pokemons/components/PokemonGrid'
 import { getPokemons } from '@/features/pokemons/services/pokemons'
+
+export const metadata: Metadata = {
+  title: 'Pokemons',
+  description: 'A list of Pokemons',
+}
 
 export default async function PokemonsPage() {
   const pokemons = await getPokemons()

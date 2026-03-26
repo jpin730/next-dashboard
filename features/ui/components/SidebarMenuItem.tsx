@@ -1,6 +1,6 @@
 'use client'
 
-import type { SidebarMenuItem as MenuItem } from '@/interfaces/SidebarMenuItem'
+import type { SidebarMenuItem as MenuItem } from '@/features/ui/interfaces/SidebarMenuItem'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
