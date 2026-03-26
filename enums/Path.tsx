@@ -3,4 +3,6 @@ export enum Path {
   Dashboard = '/dashboard',
   Main = '/dashboard/main',
   Counter = '/dashboard/counter',
+  Pokemons = '/dashboard/pokemons',
+  PokemonWithId = '/pokemons/:id',
 }

@@ -1,7 +1,7 @@
 import type { SidebarMenuItem as MenuItem } from '@/interfaces/SidebarMenuItem'
 
 import Image from 'next/image'
-import { IoBrowsersOutline, IoCalculator, IoLogoReact } from 'react-icons/io5'
+import { IoBrowsersOutline, IoCalculator, IoFootball, IoLogoReact } from 'react-icons/io5'
 
 import { Path } from '@/enums/Path'
 
@@ -19,6 +19,12 @@ const MENU_ITEMS: MenuItem[] = [
     icon: <IoCalculator size={40} />,
     title: 'Counter',
     subtitle: 'Client Side Counter',
+  },
+  {
+    path: Path.Pokemons,
+    icon: <IoFootball size={40} />,
+    title: 'Pokemons',
+    subtitle: 'Static Generation',
   },
 ]
 
