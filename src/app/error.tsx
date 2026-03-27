@@ -6,9 +6,9 @@ interface Props {
   error: Error
 }
 
-export default function PokemonsErrorPage({ error }: Readonly<Props>) {
+export default function ErrorPage({ error }: Readonly<Props>) {
   return (
-    <main className="flex h-screen w-full flex-col items-center justify-center">
+    <main className="flex h-screen w-full flex-col items-center justify-center bg-white">
       <ErrorPageSvg className="w-1/2 text-blue-600 md:w-1/3 lg:w-1/4" />
 
       <div className="flex flex-col items-center justify-center">
