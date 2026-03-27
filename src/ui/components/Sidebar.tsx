@@ -30,7 +30,7 @@ const MENU_ITEMS: MenuItem[] = [
 
 export const Sidebar = () => {
   return (
-    <div className="fixed top-0 left-0 z-10 h-screen min-h-screen w-100 shrink-0 overflow-y-scroll bg-gray-900 text-slate-300">
+    <div className="sticky top-0 left-0 z-10 h-screen min-h-screen w-100 shrink-0 overflow-y-scroll bg-gray-900 text-slate-300">
       <div id="logo" className="my-4 px-6">
         <h1 className="flex items-center text-lg font-bold text-white md:text-2xl">
           <IoLogoReact className="me-2" />
