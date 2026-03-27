@@ -16,7 +16,10 @@ export default function PokemonsErrorPage({ error }: Readonly<Props>) {
           500
         </p>
         <p className="mt-2 text-2xl font-bold text-gray-600 md:text-3xl lg:text-4xl">
-          Server Error: {error.message}
+          Server Error
+        </p>
+        <p className="mt-4 text-center text-balance text-gray-600 md:text-lg xl:text-xl">
+          {error.message}
         </p>
         <p className="mt-4 text-gray-500 md:text-lg xl:text-xl">
           Whoops, something went wrong on our servers.
