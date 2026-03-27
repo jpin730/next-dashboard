@@ -1,4 +1,4 @@
-import type { WithParams } from '@/features/shared/interfaces/WithParams'
+import type { WithParams } from '@/shared/interfaces/WithParams'
 
 interface Params {
   id: string

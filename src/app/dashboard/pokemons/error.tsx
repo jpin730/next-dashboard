@@ -1,6 +1,6 @@
 'use client'
 
-import { ErrorPageSvg } from '@/features/ui/svgs/ErrorPageSvg'
+import { ErrorPageSvg } from '@/ui/svgs/ErrorPageSvg'
 
 interface Props {
   error: Error

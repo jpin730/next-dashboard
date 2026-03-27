@@ -1,9 +1,9 @@
-import type { SidebarMenuItem as MenuItem } from '@/features/ui/interfaces/SidebarMenuItem'
+import type { SidebarMenuItem as MenuItem } from '@/ui/interfaces/SidebarMenuItem'
 
 import Image from 'next/image'
 import { IoBrowsersOutline, IoCalculator, IoFootball, IoLogoReact } from 'react-icons/io5'
 
-import { Path } from '@/features/shared/enums/Path'
+import { Path } from '@/shared/enums/Path'
 
 import { SidebarMenuItem } from './SidebarMenuItem'
 

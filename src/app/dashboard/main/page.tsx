@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function MainPage() {
   return (
     <main>
-      <h1 className="text-3xl font-bold">Main Page</h1>
+      <h1 className="text-3xl font-bold">Dashboard</h1>
     </main>
   )
 }

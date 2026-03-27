@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
-import { PokemonGrid } from '@/features/pokemons/components/PokemonGrid'
-import { getPokemons } from '@/features/pokemons/services/pokemons'
+import { PokemonGrid } from '@/pokemons/components/PokemonGrid'
+import { getPokemons } from '@/pokemons/services/pokemons'
 
 export const metadata: Metadata = {
   title: 'Pokemons',

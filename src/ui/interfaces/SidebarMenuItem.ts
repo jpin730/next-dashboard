@@ -1,4 +1,4 @@
-import type { Path } from '@/features/shared/enums/Path'
+import type { Path } from '@/shared/enums/Path'
 
 export interface SidebarMenuItem {
   path: Path
