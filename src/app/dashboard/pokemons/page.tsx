@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { cacheLife } from 'next/cache'
+
 import { PokemonGrid } from '@/pokemons/components/PokemonGrid'
 import { getPokemons } from '@/pokemons/services/pokemons'
 
@@ -9,6 +11,10 @@ export const metadata: Metadata = {
 }
 
 export default async function PokemonsPage() {
+  'use cache'
+
+  cacheLife('minutes')
+
   const pokemons = await getPokemons()
 
   return (

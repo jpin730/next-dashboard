@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import type { WithParams } from '@/shared/interfaces/WithParams'
 
+import { cacheLife } from 'next/cache'
 import Image from 'next/image'
 
 import { getPokemonByIdOrName, getPokemons } from '@/pokemons/services/pokemons'
@@ -18,6 +19,10 @@ export async function generateStaticParams(): Promise<Params[]> {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  'use cache'
+
+  cacheLife('minutes')
+
   const { idOrName } = await params
   const pokemon = await getPokemonByIdOrName(idOrName)
 
@@ -28,6 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PokemonPage({ params }: Readonly<Props>) {
+  'use cache'
+
+  cacheLife('minutes')
+
   const { idOrName } = await params
   const pokemon = await getPokemonByIdOrName(idOrName)
 
