@@ -5,4 +5,5 @@ export enum Path {
   Counter = '/dashboard/counter',
   Pokemons = '/dashboard/pokemons',
   PokemonWithId = '/dashboard/pokemons/:idOrName',
+  Random = '/dashboard/random',
 }

@@ -1,7 +1,13 @@
 import type { SidebarMenuItem as MenuItem } from '@/ui/interfaces/SidebarMenuItem'
 
 import Image from 'next/image'
-import { IoBrowsersOutline, IoCalculator, IoFootball, IoLogoReact } from 'react-icons/io5'
+import {
+  IoBrowsersOutline,
+  IoCalculator,
+  IoFootball,
+  IoLogoReact,
+  IoShuffle,
+} from 'react-icons/io5'
 
 import { Path } from '@/shared/enums/Path'
 
@@ -25,6 +31,12 @@ const MENU_ITEMS: MenuItem[] = [
     icon: <IoFootball size={40} />,
     title: 'Pokemons',
     subtitle: 'Static Generation',
+  },
+  {
+    path: Path.Random,
+    icon: <IoShuffle size={40} />,
+    title: 'Random',
+    subtitle: 'Cache Components',
   },
 ]
 
