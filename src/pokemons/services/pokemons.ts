@@ -12,7 +12,7 @@ const BASE_URL = 'https://pokeapi.co/api/v2'
 const LIMIT = 151
 
 export const fetchWrapper = async (url: string): Promise<Response> => {
-  const response = await fetch(url)
+  const response = await fetch(url, { next: { revalidate: 60 } }) // revalidate in seconds
 
   if (response.ok) {
     return response
