@@ -4,13 +4,17 @@ import type { WithParams } from '@/shared/interfaces/WithParams'
 
 import Image from 'next/image'
 
-import { getPokemonById } from '@/pokemons/services/pokemons'
+import { getPokemonById, POKEMONS_LIMIT } from '@/pokemons/services/pokemons'
 
 interface Params {
   id: string
 }
 
 type Props = WithParams<Params>
+
+export async function generateStaticParams(): Promise<Params[]> {
+  return Array.from({ length: POKEMONS_LIMIT }, (_, i) => ({ id: (i + 1).toString() }))
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
