@@ -12,7 +12,7 @@ interface Props {
 
 export const PokemonCard = ({ pokemon }: Readonly<Props>) => {
   const pokemonImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`
-  const pokemonDetailUrl = Path.PokemonWithId.replace(':id', pokemon.name)
+  const pokemonDetailUrl = Path.PokemonWithId.replace(':idOrName', pokemon.name)
 
   return (
     <div className="w-full max-w-65 rounded bg-white shadow-lg">
