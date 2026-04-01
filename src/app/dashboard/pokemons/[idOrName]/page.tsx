@@ -4,21 +4,22 @@ import type { WithParams } from '@/shared/interfaces/WithParams'
 
 import Image from 'next/image'
 
-import { getPokemonById, POKEMONS_LIMIT } from '@/pokemons/services/pokemons'
+import { getPokemonByIdOrName, getPokemons } from '@/pokemons/services/pokemons'
 
 interface Params {
-  id: string
+  idOrName: string
 }
 
 type Props = WithParams<Params>
 
 export async function generateStaticParams(): Promise<Params[]> {
-  return Array.from({ length: POKEMONS_LIMIT }, (_, i) => ({ id: (i + 1).toString() }))
+  const pokemons = await getPokemons()
+  return pokemons.flatMap(({ id, name }) => [{ idOrName: id }, { idOrName: name }])
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params
-  const pokemon = await getPokemonById(id)
+  const { idOrName } = await params
+  const pokemon = await getPokemonByIdOrName(idOrName)
 
   return {
     title: `#${pokemon.id} ${pokemon.name}`,
@@ -27,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PokemonPage({ params }: Readonly<Props>) {
-  const { id } = await params
-  const pokemon = await getPokemonById(id)
+  const { idOrName } = await params
+  const pokemon = await getPokemonByIdOrName(idOrName)
 
   return (
     <main className="flex h-full items-center justify-center">

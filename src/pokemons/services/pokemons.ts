@@ -9,7 +9,7 @@ import { HTTP_STATUS } from '@/shared/consts/HttpStatus'
 
 const BASE_URL = 'https://pokeapi.co/api/v2'
 
-export const POKEMONS_LIMIT = 151
+const LIMIT = 151
 
 export const fetchWrapper = async (url: string): Promise<Response> => {
   const response = await fetch(url)
@@ -25,7 +25,7 @@ export const fetchWrapper = async (url: string): Promise<Response> => {
   throw new Error(`Error fetching data from ${url}: ${response.status} ${response.statusText}`)
 }
 
-export const getPokemons = async (limit = POKEMONS_LIMIT, offset = 0): Promise<SimplePokemon[]> => {
+export const getPokemons = async (limit = LIMIT, offset = 0): Promise<SimplePokemon[]> => {
   const response = await fetchWrapper(`${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`)
   const data: PokemonApiResponse<PokemonApiResource[]> = await response.json()
   return data.results.map(({ name, url }) => ({
@@ -34,7 +34,7 @@ export const getPokemons = async (limit = POKEMONS_LIMIT, offset = 0): Promise<S
   }))
 }
 
-export const getPokemonById = async (id: string): Promise<Pokemon> => {
-  const response = await fetchWrapper(`${BASE_URL}/pokemon/${id}`)
+export const getPokemonByIdOrName = async (idOrName: string): Promise<Pokemon> => {
+  const response = await fetchWrapper(`${BASE_URL}/pokemon/${idOrName}`)
   return response.json()
 }
