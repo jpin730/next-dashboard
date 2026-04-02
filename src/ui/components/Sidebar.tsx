@@ -5,6 +5,7 @@ import {
   IoBrowsersOutline,
   IoCalculator,
   IoFootball,
+  IoHeart,
   IoLogoReact,
   IoShuffle,
 } from 'react-icons/io5'
@@ -37,6 +38,12 @@ const MENU_ITEMS: MenuItem[] = [
     icon: <IoShuffle size={40} />,
     title: 'Random',
     subtitle: 'Cache Components',
+  },
+  {
+    path: Path.Favorites,
+    icon: <IoHeart size={40} />,
+    title: 'Favorites',
+    subtitle: 'Your favorite items',
   },
 ]
 
