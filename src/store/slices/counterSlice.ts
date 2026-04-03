@@ -25,6 +25,10 @@ const counterSlice = createSlice({
     decrement(state) {
       if (state.value > 0) state.value--
     },
+    setValue(state, action: PayloadAction<number>) {
+      if (action.payload < 0) action.payload = 0
+      state.value = action.payload
+    },
   },
 })
 

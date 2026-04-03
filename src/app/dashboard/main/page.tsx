@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { SimpleWidget } from '@/ui/components/SimpleWidget'
+import { WidgetGrid } from '@/ui/components/WidgetGrid'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -12,9 +12,7 @@ export default function MainPage() {
     <main>
       <h1 className="mb-4 text-2xl font-bold">Dashboard</h1>
 
-      <div className="flex flex-wrap items-start justify-start">
-        <SimpleWidget />
-      </div>
+      <WidgetGrid />
     </main>
   )
 }
