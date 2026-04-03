@@ -5,19 +5,20 @@ import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { counterActions } from '@/store/slices/counterSlice'
 
-interface Props {
-  initialCount?: number
-}
+import { getCounterValue } from '../services/counter'
 
-export const Counter = ({ initialCount = 10 }: Readonly<Props>) => {
+export const Counter = () => {
   const dispatch = useAppDispatch()
   const count = useAppSelector((state) => state.counter.value)
 
   useEffect(
-    function initCounter() {
-      dispatch(counterActions.init(initialCount))
+    function fetchCounterValue() {
+      ;(async () => {
+        const { data } = await getCounterValue()
+        dispatch(counterActions.init(data))
+      })()
     },
-    [dispatch, initialCount],
+    [dispatch],
   )
 
   return (

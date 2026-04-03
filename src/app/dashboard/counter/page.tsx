@@ -11,7 +11,7 @@ export default function CounterPage() {
   return (
     <main className="flex size-full flex-col items-center justify-center">
       <h1 className="text-2xl font-bold">Counter</h1>
-      <Counter initialCount={20} />
+      <Counter />
     </main>
   )
 }
