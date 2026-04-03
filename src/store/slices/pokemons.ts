@@ -4,8 +4,10 @@ import type { SimplePokemon } from '@/pokemons/interfaces/SimplePokemon'
 
 import { createSlice } from '@reduxjs/toolkit'
 
+type SimplePokemonMap = Record<string, SimplePokemon>
+
 interface PokemonsState {
-  favoritesMap: Record<string, SimplePokemon>
+  favoritesMap: SimplePokemonMap
 }
 
 const initialState: PokemonsState = {
@@ -14,7 +16,7 @@ const initialState: PokemonsState = {
 
 const pokemonsSlice = createSlice({
   name: 'pokemons',
-  initialState,
+  initialState: initialState,
   reducers: {
     toggleFavorite(state, action: PayloadAction<SimplePokemon>) {
       const pokemon = action.payload
@@ -24,6 +26,9 @@ const pokemonsSlice = createSlice({
         return
       }
       state.favoritesMap[pokemon.id] = pokemon
+    },
+    setFavorites(state, action: PayloadAction<SimplePokemonMap>) {
+      state.favoritesMap = action.payload
     },
   },
 })
