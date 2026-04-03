@@ -29,6 +29,7 @@ export const PokemonCard = ({ pokemon }: Readonly<Props>) => {
       <div className="relative border-b bg-gray-800 p-6 text-center">
         <Image
           fill
+          loading="eager"
           className="static! h-50! object-contain"
           src={pokemonImageUrl}
           alt={pokemon.name}
