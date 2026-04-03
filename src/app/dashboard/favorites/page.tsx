@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { PokemonGrid } from '@/pokemons/components/PokemonGrid'
+import { FavoritePokemons } from '@/pokemons/components/FavoritePokemons'
 
 export const metadata: Metadata = {
   title: 'Favorites',
@@ -12,7 +12,7 @@ export default async function PokemonsPage() {
     <main>
       <h1 className="mb-4 text-2xl font-bold">Favorite Pokemons</h1>
 
-      <PokemonGrid pokemons={[]} />
+      <FavoritePokemons />
     </main>
   )
 }
