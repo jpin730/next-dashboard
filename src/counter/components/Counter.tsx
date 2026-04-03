@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from '@/store'
-import { counterActions } from '@/store/slices/counterSlice'
+import { counterActions } from '@/store/slices/counter'
 
 import { getCounterValue } from '../services/counter'
 
