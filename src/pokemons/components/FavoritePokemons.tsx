@@ -1,24 +1,29 @@
 'use client'
 
+import type { SimplePokemon } from '../interfaces/SimplePokemon'
+
 import { useEffect, useState } from 'react'
-import { shallowEqual } from 'react-redux'
 
 import { useAppSelector } from '@/store'
 
 import { PokemonGrid } from './PokemonGrid'
 
 export const FavoritePokemons = () => {
-  const favoritePokemons = useAppSelector(
-    (state) => Object.values(state.pokemons.favoritesMap),
-    shallowEqual,
-  )
-  // useState's initial value is set once, so we need to update on re-mount the component
-  const [pokemons, setPokemons] = useState(favoritePokemons)
+  const favoritePokemons = useAppSelector((state) => Object.values(state.pokemons.favoritesMap))
 
-  useEffect(() => {
-    // Because of hydration, we need to set the pokemons in a useEffect
-    setPokemons(favoritePokemons)
-  }, [favoritePokemons])
+  const [isMounted, setIsMounted] = useState(false)
+  const [initialPokemons, setInitialPokemon] = useState<SimplePokemon[]>([])
 
-  return <PokemonGrid pokemons={pokemons} />
+  useEffect(function resetIsMounted() {
+    return () => {
+      setIsMounted(false)
+    }
+  }, [])
+
+  if (!isMounted) {
+    setInitialPokemon(favoritePokemons)
+    setIsMounted(true)
+  }
+
+  return <PokemonGrid pokemons={initialPokemons} />
 }
