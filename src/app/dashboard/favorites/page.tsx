@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { FavoritePokemons } from '@/pokemons/components/FavoritePokemonsWrapper'
+import { FavoritePokemons } from '@/pokemons/components/FavoritePokemons'
 
 export const metadata: Metadata = {
   title: 'Favorites',

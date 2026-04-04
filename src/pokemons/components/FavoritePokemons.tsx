@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import { useAppSelector } from '@/store'
 import { favoritePokemonsSelector } from '@/store/selectors/pokemons'
 
-import { PokemonGrid } from './PokemonGrid'
+import { PokemonGrid } from './PokemonGridWrapper'
 
 export const FavoritePokemons = () => {
   const favoritePokemons = useAppSelector(favoritePokemonsSelector)
