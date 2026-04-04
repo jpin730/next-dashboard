@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { cacheLife } from 'next/cache'
 
-import { PokemonGrid } from '@/pokemons/components/PokemonGrid'
+import { PokemonGrid } from '@/pokemons/components/PokemonGridWrapper'
 import { getPokemons } from '@/pokemons/services/pokemons'
 
 export const metadata: Metadata = {
